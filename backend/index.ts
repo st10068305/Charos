@@ -1,11 +1,18 @@
-import app from "@/app";
 import { serve } from "@hono/node-server";
+import { config } from "dotenv";
+import { expand } from "dotenv-expand";
 
-const port = 4000;
+import app from "@/app";
+
+import env from "@/utils/env";
+
+expand(config());
+
+const port = env.PORT;
 
 console.log("🚀 The API is running on http://localhost:" + port);
 
 serve({
-    fetch: app.fetch,
-    port
-})
+  fetch: app.fetch,
+  port,
+});
