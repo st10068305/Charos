@@ -5,7 +5,7 @@ import { Config } from "@/types";
 import packageJSON from "../../package.json";
 
 export default function configureOpenAPI(app: OpenAPIHono<Config>) {
-  app.doc("/api-doc", {
+  app.doc("/api-spec", {
     openapi: "3.0.0",
     info: {
       version: packageJSON.version,

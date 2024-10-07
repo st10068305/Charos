@@ -1,8 +1,6 @@
-import { OpenAPIHono } from "@hono/zod-openapi";
+import { createRoute, z } from "@hono/zod-openapi";
 
-import { Config } from "@/types";
-
-const router = new OpenAPIHono<Config>();
+import createRouter from "@/utils/create-router";
 
 const CharosText = `██████╗██╗  ██╗ █████╗ ██████╗  ██████╗ ███████╗
 ██╔════╝██║  ██║██╔══██╗██╔══██╗██╔═══██╗██╔════╝
@@ -19,8 +17,24 @@ ST1002865: Umar Bux
 ST10240068: Mohamed Ziyaa Moosa
 `;
 
-router.get("/", (context) => {
-  return context.text(CharosText, 200);
-});
+const router = createRouter().openapi(
+  createRoute({
+    method: "get",
+    path: "/",
+    responses: {
+      200: {
+        content: {
+          "text/plain": {
+            schema: z.string(),
+          },
+        },
+        description: "Charos API index route",
+      },
+    },
+  }),
+  (context) => {
+    return context.text(CharosText, 200);
+  }
+);
 
 export default router;
