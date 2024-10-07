@@ -4,7 +4,7 @@ import { expand } from "dotenv-expand";
 
 import app from "@/app";
 
-import env from "@/utils/env";
+import env from "@/lib/env";
 
 expand(config());
 

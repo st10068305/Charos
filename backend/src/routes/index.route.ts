@@ -1,6 +1,6 @@
 import { createRoute, z } from "@hono/zod-openapi";
 
-import createRouter from "@/utils/create-router";
+import createRouter from "@/lib/create-router";
 
 const CharosText = `██████╗██╗  ██╗ █████╗ ██████╗  ██████╗ ███████╗
 ██╔════╝██║  ██║██╔══██╗██╔══██╗██╔═══██╗██╔════╝

@@ -1,8 +1,8 @@
 import index from "@/routes/index.route";
 
-import configureOpenAPI from "./utils/configure-openapi";
-import configureScalar from "./utils/configure-scalar";
-import createApp from "./utils/create-app";
+import configureOpenAPI from "./lib/configure-openapi";
+import configureScalar from "./lib/configure-scalar";
+import createApp from "./lib/create-app";
 
 const app = createApp();
 
