@@ -1,6 +1,6 @@
 import { OpenAPIHono } from "@hono/zod-openapi";
 
-import { Config } from "@/types/config";
+import { Config } from "@/types";
 
 const indexRouter = new OpenAPIHono<Config>();
 

@@ -1,8 +1,9 @@
 import { OpenAPIHono } from "@hono/zod-openapi";
 import { notFound, onError, serveEmojiFavicon } from "stoker/middlewares";
 
+import { Config } from "@/types";
+
 import { pinoLogger } from "../middleware/pino-logger";
-import { Config } from "../types/config";
 
 export default function createApp() {
   const app = new OpenAPIHono<Config>({ strict: false });
