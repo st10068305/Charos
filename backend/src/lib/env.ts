@@ -1,4 +1,8 @@
+import { config } from "dotenv";
+import { expand } from "dotenv-expand";
 import { ZodError, z } from "zod";
+
+expand(config());
 
 const Environment = z.object({
   NODE_ENV: z.string().default("development"),

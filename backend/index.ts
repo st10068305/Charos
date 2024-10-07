@@ -1,12 +1,8 @@
 import { serve } from "@hono/node-server";
-import { config } from "dotenv";
-import { expand } from "dotenv-expand";
 
 import app from "@/app";
 
 import env from "@/lib/env";
-
-expand(config());
 
 const port = env.PORT;
 

@@ -10,6 +10,12 @@ export default function configureScalar(app: OpenAPIHono<Config>) {
       spec: {
         url: "/api-spec",
       },
+      theme: "mars",
+      layout: "classic",
+      defaultHttpClient: {
+        targetKey: "node",
+        clientKey: "fetch",
+      },
     })
   );
 }
