@@ -1,13 +1,10 @@
-import { OpenAPIHono } from "@hono/zod-openapi";
 import { notFound, onError, serveEmojiFavicon } from "stoker/middlewares";
 
-import { Config } from "@/types";
-
 import { pinoLogger } from "../middleware/pino-logger";
+import createRouter from "./create-router";
 
 export default function createApp() {
-  const app = new OpenAPIHono<Config>({ strict: false });
-
+  const app = createRouter();
   /**
    * Setup our not found and error middleware to return JSON responses.
    */

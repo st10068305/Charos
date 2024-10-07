@@ -2,7 +2,7 @@ import { OpenAPIHono } from "@hono/zod-openapi";
 
 import { Config } from "@/types";
 
-const indexRouter = new OpenAPIHono<Config>();
+const router = new OpenAPIHono<Config>();
 
 const CharosText = `██████╗██╗  ██╗ █████╗ ██████╗  ██████╗ ███████╗
 ██╔════╝██║  ██║██╔══██╗██╔══██╗██╔═══██╗██╔════╝
@@ -19,8 +19,8 @@ ST1002865: Umar Bux
 ST10240068: Mohamed Ziyaa Moosa
 `;
 
-indexRouter.get("/", (context) => {
+router.get("/", (context) => {
   return context.text(CharosText, 200);
 });
 
-export default indexRouter;
+export default router;
