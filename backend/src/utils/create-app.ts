@@ -5,7 +5,7 @@ import { pinoLogger } from "../middleware/pino-logger";
 import { Config } from "../types/config";
 
 export default function createApp() {
-  const app = new OpenAPIHono<Config>();
+  const app = new OpenAPIHono<Config>({ strict: false });
 
   /**
    * Setup our not found and error middleware to return JSON responses.
